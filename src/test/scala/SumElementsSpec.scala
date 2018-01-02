@@ -1,11 +1,12 @@
 import org.scalatest._
-import org.scalacheck.Prop.forAll
+import prop._
 
-class SumElementsSpec extends FlatSpec with Matchers {
+class SumElementsSpec extends PropSpec with Matchers with PropertyChecks {
 
-  val prop = forAll { (list: List[Int]) =>
-    SumElements.sumElements(list) == list.sum
+  property("Sum should return correct results") {
+    forAll { (list: List[Int]) =>
+      SumElements.run(list) should be(list.sum)
+    }
   }
 
-  prop.check
 }

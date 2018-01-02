@@ -1,6 +1,6 @@
 object SumElements {
 
-  def sumElements(xs: List[Int]): Int = {
+  def run(list: List[Int]): Int = {
     ???
   }
 
