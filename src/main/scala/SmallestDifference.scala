@@ -2,7 +2,7 @@
 
 object SmallestDifference {
 
-  def run(list: List[Int]): Option[Int] = ???
-
+  def run(list: List[Int]): Option[Int] =
+    ???
 
 }
