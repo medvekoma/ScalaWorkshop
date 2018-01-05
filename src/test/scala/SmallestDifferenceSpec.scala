@@ -1,5 +1,4 @@
 import org.scalatest._
-import prop._
 
 class SmallestDifferenceSpec extends FlatSpec with Matchers {
 
