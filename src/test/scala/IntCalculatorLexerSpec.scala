@@ -4,22 +4,32 @@ import calclexer.IntCalculatorLexer.Token
 
 class IntCalculatorLexerSpec extends FlatSpec with Matchers {
 
-  "SimpleTokenizer" should "work" in {
+  val result =
+    Vector(Token("1", "Int"), Token("+", "Operator"), Token("2", "Int"))
 
-    val result =
-      Vector(Token("1", "Int"), Token("+", "Operator"), Token("2", "Int"))
+  val result3 = result ++ Vector(Token("*", "Operator"),
+                                 Token("9", "Int"),
+                                 Token("-", "Operator"),
+                                 Token("2", "Int"))
 
+  "SimpleTokenizer" should "process operators and single digit numbers" in {
+    assert(result == IntCalculatorLexer.run("1+2".toList))
+    assert(result3 == IntCalculatorLexer.run("1+2*9-2".toList))
+  }
+
+  it should "handle single whitespaces" in {
+    assert(result == IntCalculatorLexer.run("1 +2 ".toList))
+    assert(result3 == IntCalculatorLexer.run(" 1 + 2 * 9 - 2 ".toList))
+  }
+
+  it should "handle any number of whitespaces" in {
+    assert(result == IntCalculatorLexer.run("1    +2 ".toList))
+    assert(result3 == IntCalculatorLexer.run(" 1 + 2 * 9    - \n 2  ".toList))
+  }
+
+  it should "process integers with more than one digits" in {
     val result2 =
       Vector(Token("123", "Int"), Token("+", "Operator"), Token("256", "Int"))
-
-    assert(result == IntCalculatorLexer.run("1+2".toList))
-    assert(result == IntCalculatorLexer.run("  1  +  2  ".toList))
-    assert(
-      result ++ Vector(Token("*", "Operator"),
-                       Token("9", "Int"),
-                       Token("-", "Operator"),
-                       Token("2", "Int")) == IntCalculatorLexer.run(
-        "  1  +  2 * 9 - 2  ".toList))
 
     assert(result2 == IntCalculatorLexer.run("123 + 256".toList))
   }
