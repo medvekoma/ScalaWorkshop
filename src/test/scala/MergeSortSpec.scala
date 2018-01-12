@@ -1,3 +1,4 @@
+import mergesort.MergeSort
 import org.scalatest._
 import prop._
 

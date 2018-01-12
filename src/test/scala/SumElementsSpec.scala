@@ -1,5 +1,6 @@
 import org.scalatest._
 import prop._
+import sumelements.SumElements
 
 class SumElementsSpec extends PropSpec with Matchers with PropertyChecks {
 

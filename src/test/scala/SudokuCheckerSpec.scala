@@ -1,4 +1,5 @@
 import org.scalatest._
+import sudokuchecker.SudokuChecker
 
 class SudokuCheckerSpec extends FlatSpec with Matchers {
   // Get test cases from codefights

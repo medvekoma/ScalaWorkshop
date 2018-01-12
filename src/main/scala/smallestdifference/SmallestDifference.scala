@@ -1,3 +1,5 @@
+package smallestdifference
+
 // Given a list of integers find the smallest difference between two adjacent numbers
 
 object SmallestDifference {
