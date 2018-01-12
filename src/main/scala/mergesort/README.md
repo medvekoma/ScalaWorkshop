@@ -1,2 +1,2 @@
-#Merge Sort
+## Merge Sort
 

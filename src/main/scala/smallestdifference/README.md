@@ -1,6 +1,6 @@
-##Smallest Difference
+## Smallest Difference
 
-##Description
+## Description
 **Input:** a list of integers
 
 **Ouput:** return the smallest difference between any numbers of the list.

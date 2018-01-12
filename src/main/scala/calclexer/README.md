@@ -3,7 +3,7 @@
 Write a lexer for a simple calculator which only knows integer numbers and the basic arithmetic operators (+, - , * , /) 
 and is able to handle whitespaces.
 
-##Lexer
+## Lexer
 A lexer is among the first stages of a compiler or an interpreter.
 It converts a sequence of characters (the source code) to a sequence of tokens,
  which can be fed to the parser.
@@ -17,7 +17,7 @@ The lexer doesn't check grammar rules, that is the responsibility of the parser 
 So the tokens can be in an invalid order (eg.: "+ + 2 **" )
 
 
-##Description
+## Description
 
 **Input:** A list of characters representing the source code.
 eg: "1 + 12 * 123". Considering we won't have any grammar,
