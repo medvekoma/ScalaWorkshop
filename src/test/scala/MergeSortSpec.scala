@@ -6,6 +6,7 @@ class MergeSortSpec extends PropSpec with Matchers with PropertyChecks {
 
   property("should return a sorted list") {
     forAll { (list: List[Int]) =>
+      println(list)
       MergeSort.run(list) should be(list.sorted)
     }
   }
